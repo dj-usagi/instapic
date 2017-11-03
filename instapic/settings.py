@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'er7!))(no=x)g%y(qi1x*jj3*9)y-#3__0bwa*_j0d_l-r_%9q'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', 'instapic.ap-northeast-1.elasticbeanstalk.com']
 
 
 # Application definition
