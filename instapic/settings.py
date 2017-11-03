@@ -74,16 +74,46 @@ WSGI_APPLICATION = 'instapic.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.postgresql_psycopg2",
-        "NAME": "instapic",
-        "USER": "dj.usagi",
-        "PASSWORD": "drsm0619",
-        "HOST": "localhost",
-        "PORT": "",
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.postgresql_psycopg2",
+#         "NAME": "instapic",
+#         "USER": "dj.usagi",
+#         "PASSWORD": "drsm0619",
+#         "HOST": "localhost",
+#         "PORT": "",
+#     }
+# }
+
+
+
+
+
+if 'ebdb' in os.environ:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': os.environ['ebdb'],
+            'USER': os.environ['djusagi'],
+            'PASSWORD': os.environ['drsm0619'],
+            'HOST': os.environ['aayx81aotnb9j3.crt5cp12cl2u.ap-northeast-1.rds.amazonaws.com:5432'],
+            'PORT': os.environ['5432'],
+        }
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': 'instapic',
+            'USER': 'dj.usagi',
+            'PASSWORD': 'drsm0619',
+            'HOST': 'localhost',
+            'PORT': '5432',
+        }
+    }
+
+
+
 
 
 # Password validation
